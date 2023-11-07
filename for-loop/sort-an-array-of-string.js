@@ -20,7 +20,8 @@ const sortArray = (list) => {
     }
 
     console.log({ list });
-
+    console.log("a" > "b"); // false
+    console.log("b" > "a"); // true
     return list;
 };
 
