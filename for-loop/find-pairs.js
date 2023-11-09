@@ -1,6 +1,24 @@
-const arr = [1, 2, 3, 6, 9, 4, 5, 4, 3];
+const arr = [1, 2, 3, 6, 4, -9, 5, 4, 3, 4, 17];
 
-const findSumPairs = (arr, value) => {
+const findSumPairsOne = (arr, value) => {
+    const target = [];
+    const output = [];
+    for (let i = 0; i <= arr.length; i++) {
+        const targetValue = value - arr[i];
+
+        if (target.includes(targetValue)) {
+            output.push([targetValue, arr[i]]);
+        } else {
+            target.push(arr[i]);
+        }
+    }
+
+    return output;
+};
+
+// console.log(findSumPairsOne(arr, 8));
+
+const findSumPairsTwo = (arr, value) => {
     const observed = {};
     const result = [];
 
@@ -21,4 +39,4 @@ const findSumPairs = (arr, value) => {
     return result;
 };
 
-console.log(findSumPairs(arr, 9));
+console.log(findSumPairsTwo(arr, 8));
