@@ -4,10 +4,8 @@ const t1 = (list) => {
         for (let j = i + 1; j < len; j++) {
             if (list[i] > list[j]) {
                 let temp = list[i];
-                if (list[i] > list[j]) {
-                    list[i] = list[j];
-                    list[j] = temp;
-                }
+                list[i] = list[j];
+                list[j] = temp;
             }
         }
     }

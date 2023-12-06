@@ -1,23 +1,48 @@
-var a = ["rat", "mat", "fat", "at", "greet"];
+var a = ["rat", "cat", "card", "cargo", "mat", "fat", "at", "greet"];
 
 const sortArray = (list) => {
     const len = list.length;
 
-    for (let i = 0; i < len; i++) {
-        for (let j = i + 1; j < len; j++) {
+    const compareWords = (x, y) => {
+        const wordlength = x.length > y.length ? y.length : x.length;
+        let res;
+        for (let i = 0; i < wordlength; i++) {
+            if (x.charAt(i) === y.charAt(i)) {
+                continue;
+            } else {
+                if (x.charAt(i) > y.charAt(i)) {
+                    res = true;
+                } else {
+                    res = false;
+                }
+                break;
+            }
+        }
+
+        return res;
+    };
+
+    let swapped = false;
+
+    for (let i = len - 1; i >= 0; i--) {
+        for (let j = 0; j < i; j++) {
             if ((list[i], list[j])) {
-                if (list[i].charAt(0) > list[j].charAt(0)) {
-                    let temp = list[i];
-                    list[i] = list[j];
-                    list[j] = temp;
+                if (compareWords(list[j], list[j + 1])) {
+                    let temp = list[j];
+                    list[j] = list[j + 1];
+                    list[j + 1] = temp;
+                    swapped = true;
                 }
             }
+        }
+
+        if (!swapped) {
+            break;
         }
     }
 
     console.log({ list });
-    console.log("a" > "b"); // false
-    console.log("b" > "a"); // true
+
     return list;
 };
 
