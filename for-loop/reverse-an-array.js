@@ -1,4 +1,4 @@
-const t = (list) => {
+const reverseArray = (list) => {
     let len = list.length;
     for (let i = 0; i < len / 2; i++) {
         temp = list[i];
@@ -9,14 +9,4 @@ const t = (list) => {
     return list;
 };
 
-t([1, 2, 3, 4, 5, 6]);
-
-// const t = () => {
-//     for (let i = 0; i < 10; i++) {
-//         setTimeout(() => {
-//             console.log(i);
-//         }, 1);
-//     }
-// };
-
-// t();
+reverseArray([1, 2, 3, 4, 5, 6]);

@@ -5,7 +5,6 @@ const findMissingNum = (list) => {
         if (list[i] - temp > 1) {
             return list[i] - 1;
         }
-
         temp = list[i];
     }
 };
