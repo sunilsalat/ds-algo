@@ -47,11 +47,9 @@ const main = (arr, targetSum) => {
 
     for (const num of arr) {
         const complement = targetSum - num;
-
         if (seenNumbers.has(complement)) {
             distinctPairs.add(JSON.stringify([num, complement]));
         }
-
         seenNumbers.add(num);
     }
 
@@ -59,5 +57,4 @@ const main = (arr, targetSum) => {
 };
 
 console.log(main([1, 2, 3, 6, 4, -9, 5, 4, 3, 4, 4, 17], 8));
-
 console.log(findSumPairsTwo(arr, 8));
