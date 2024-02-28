@@ -7,8 +7,6 @@ const sortArray = (arr) => {
                 arr[j] = temp;
             }
         }
-        console.log(arr);
-        console.log("#####################");
     }
 
     return arr;
