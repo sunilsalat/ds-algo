@@ -1,25 +1,24 @@
 const arr = [1, 2, 3, 6, 4, -9, 5, 4, 3, 4, 4, 17];
 
-const findSumPairsOne = (arr, value) => {
-    const target = [];
-    const output = [];
+const findSumPairs = (arr, value) => {
+    const observed = [];
+    const sumPairs = [];
     for (let i = 0; i <= arr.length; i++) {
         const targetValue = value - arr[i];
 
-        if (target.includes(targetValue)) {
-            output.push([targetValue, arr[i]]);
-        } else {
-            target.push(arr[i]);
+        if (observed.includes(targetValue)) {
+            sumPairs.push([targetValue, arr[i]]);
         }
+        observed.push(arr[i]);
     }
 
-    return output;
+    return sumPairs;
 };
 
-// console.log(findSumPairsOne(arr, 8));
+console.log(findSumPairs(arr, 8));
 
 // if aksed for distinct pairs
-const main = (arr, targetSum) => {
+const findDistinctSumPairs = (arr, targetSum) => {
     const seenNumbers = new Set();
     const distinctPairs = new Set();
 
@@ -34,28 +33,4 @@ const main = (arr, targetSum) => {
     return Array.from(distinctPairs).map((item) => JSON.parse(item));
 };
 
-console.log(main([1, 2, 3, 6, 4, -9, 5, 4, 3, 4, 4, 17], 8));
-console.log(findSumPairsTwo(arr, 8));
-
-///
-
-const findSumPairsTwo = (arr, value) => {
-    const observed = {};
-    const result = [];
-
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] + arr[j] === value) {
-                if (
-                    !observed[`${arr[i]} - ${arr[j]}`] &&
-                    !observed[`${arr[j]} - ${arr[i]}`]
-                ) {
-                    result.push([arr[i], arr[j]]);
-                    observed[`${arr[i]} - ${arr[j]}`] = [arr[i], arr[j]];
-                }
-            }
-        }
-    }
-
-    return result;
-};
+console.log(findDistinctSumPairs([1, 2, 3, 6, 4, -9, 5, 4, 3, 4, 4, 17], 8));
