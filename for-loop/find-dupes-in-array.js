@@ -1,16 +1,13 @@
 const findDupes = (arr) => {
-    const len = arr.length;
     const observed = {};
     const duplicates = [];
-    for (let i = 0; i < len; i++) {
+
+    for (let i = 0; i < arr.length; i++) {
         if (observed[arr[i]]) {
-            if (observed[arr[i]] === 1) {
-                duplicates.push(arr[i]);
-            }
-            observed[arr[i]] = observed[arr[i]] + 1;
-        } else {
-            observed[arr[i]] = 1;
+            duplicates.push(arr[i]);
         }
+
+        observed[arr[i]] = observed[arr[i]] ? observed[arr[i]] + 1 : 1;
     }
 
     return duplicates;

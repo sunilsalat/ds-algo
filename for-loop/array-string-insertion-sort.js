@@ -1,4 +1,4 @@
-// var a = ["rat", "cat", "card", "cargo", "mat", "fat", "at", "greet"];
+var arr = ["rat", "cat", "card", "cargo", "mat", "fat", "at", "greet"];
 
 // const sortArray = (list) => {
 //     const len = list.length;

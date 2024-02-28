@@ -5,7 +5,6 @@ const reverseArray = (list) => {
         list[i] = list[len - i - 1];
         list[len - i - 1] = temp;
     }
-    console.log(list);
     return list;
 };
 

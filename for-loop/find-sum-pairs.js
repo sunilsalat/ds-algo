@@ -18,6 +18,27 @@ const findSumPairsOne = (arr, value) => {
 
 // console.log(findSumPairsOne(arr, 8));
 
+// if aksed for distinct pairs
+const main = (arr, targetSum) => {
+    const seenNumbers = new Set();
+    const distinctPairs = new Set();
+
+    for (const num of arr) {
+        const complement = targetSum - num;
+        if (seenNumbers.has(complement)) {
+            distinctPairs.add(JSON.stringify([num, complement]));
+        }
+        seenNumbers.add(num);
+    }
+
+    return Array.from(distinctPairs).map((item) => JSON.parse(item));
+};
+
+console.log(main([1, 2, 3, 6, 4, -9, 5, 4, 3, 4, 4, 17], 8));
+console.log(findSumPairsTwo(arr, 8));
+
+///
+
 const findSumPairsTwo = (arr, value) => {
     const observed = {};
     const result = [];
@@ -38,23 +59,3 @@ const findSumPairsTwo = (arr, value) => {
 
     return result;
 };
-
-// if aksed for distinct pairs
-
-const main = (arr, targetSum) => {
-    const seenNumbers = new Set();
-    const distinctPairs = new Set();
-
-    for (const num of arr) {
-        const complement = targetSum - num;
-        if (seenNumbers.has(complement)) {
-            distinctPairs.add(JSON.stringify([num, complement]));
-        }
-        seenNumbers.add(num);
-    }
-
-    return Array.from(distinctPairs).map((item) => JSON.parse(item));
-};
-
-console.log(main([1, 2, 3, 6, 4, -9, 5, 4, 3, 4, 4, 17], 8));
-console.log(findSumPairsTwo(arr, 8));

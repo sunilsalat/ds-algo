@@ -1,11 +1,8 @@
 const findMissingNum = (list) => {
-    const len = list.length;
-    let temp = 0;
-    for (let i = 0; i < len; i++) {
-        if (list[i] - temp > 1) {
-            return list[i] - 1;
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] + 1 !== list[i + 1]) {
+            return list[i] + 1;
         }
-        temp = list[i];
     }
 };
 
