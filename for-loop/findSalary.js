@@ -23,4 +23,37 @@ const getAmount = (n) => {
     return sum;
 };
 
-console.log(getAmount(14));
+console.log(getAmount(49));
+
+/// constant time result
+const calculateCompletePart = (n) => {
+    const res = 28 * n + (7 * ((n * (n + 1)) / 2) - 7 * n);
+    return res;
+};
+
+const calculateRestPart = (b, c) => {
+    let res = 0;
+    for (let i = 0; i < b; i++) {
+        let t = c + i;
+        res += t;
+    }
+    return res;
+};
+
+const getSum = (n) => {
+    // n is term
+    // a is complete 7s
+    // b is rest part of salary
+    // c is counter for monday initialization
+    let a = Math.floor(n / 7);
+    let b = n % 7;
+    let c = a + 1;
+
+    const compPart = calculateCompletePart(a);
+    const restPart = calculateRestPart(b, c);
+    return compPart + restPart;
+};
+
+console.log(getSum(5));
+// console.log(calculateCompletePart(4))
+// console.log(calculateRestPart(4, 5))
