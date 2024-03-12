@@ -1,18 +1,3 @@
-let count = 0;
-
-// nlog(n)
-
-const produceArr = () => {
-    const arr = [];
-    for (let i = 1; i <= 1100; i++) {
-        arr.push(i);
-    }
-
-    return arr;
-};
-
-// console.log(produceArr());
-
 const quickSort = (arr) => {
     if (arr.length <= 1) {
         return arr;
@@ -33,7 +18,6 @@ const quickSort = (arr) => {
         }
 
         if (arr[i] === pivot) {
-            count += 1;
             middle.push(arr[i]);
         }
     }
@@ -43,5 +27,4 @@ const quickSort = (arr) => {
     return result;
 };
 
-console.log(quickSort(produceArr()));
-console.log(count);
+console.log(quickSort([4, -1, 34, 9, -9, 103]));
