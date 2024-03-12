@@ -19,7 +19,7 @@ const binarySearchRecursion = (arr, value) => {
         end = arr.indexOf(midTerm);
     }
 
-    return main(arr.slice(start, end + 1), value);
+    return binarySearchRecursion(arr.slice(start, end + 1), value);
 };
 
 console.log(
@@ -33,7 +33,7 @@ const binarySearch = (arr, key) => {
     let start = 0;
     let end = arr.length - 1;
 
-    while (start < end) {
+    while (start <= end) {
         let mid = Math.floor((start + end) / 2);
 
         if (arr[mid] === key) {
@@ -48,4 +48,4 @@ const binarySearch = (arr, key) => {
     return false;
 };
 
-console.log(binarySearch([1, 3, 5, 6, 9, 14, 29, 57, 89], 29));
+console.log(binarySearch([1, 2, 5, 6, 9, 14, 17, 19, 20], 4));
