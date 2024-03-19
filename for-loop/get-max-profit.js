@@ -13,7 +13,7 @@ const getMaxProfit = (arr) => {
     let buy = arr[0];
     let maxProfit = 0;
     for (let i = 0; i < arr.length; i++) {
-        if (buy > arr[i]) {
+        if (arr[i] < buy) {
             buy = arr[i];
         }
 
@@ -24,4 +24,4 @@ const getMaxProfit = (arr) => {
     return maxProfit;
 };
 
-console.log(getMaxProfit([7, 1, 5, 3, 6, 4, 9]));
+console.log(getMaxProfit([7, 1, 5, 3, 6, 4, 1]));
