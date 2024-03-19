@@ -10,26 +10,18 @@ Output: 0
 */
 
 const getMaxProfit = (arr) => {
-    let min = arr[0];
-    let max = arr[0];
-
+    let buy = arr[0];
+    let maxProfit = 0;
     for (let i = 0; i < arr.length; i++) {
-        // if last element is min return 0 profit
-        if (min === arr[arr.length - 1]) {
-            return 0;
+        if (buy > arr[i]) {
+            buy = arr[i];
         }
 
-        if (arr[i] < min) {
-            min = arr[i];
-            max = arr[i];
-        }
-
-        if (arr[i] > max) {
-            max = arr[i];
+        if (arr[i] - buy > maxProfit) {
+            maxProfit = arr[i] - buy;
         }
     }
-
-    return max - min;
+    return maxProfit;
 };
 
 console.log(getMaxProfit([7, 1, 5, 3, 6, 4, 9]));

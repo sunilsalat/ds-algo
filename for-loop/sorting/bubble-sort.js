@@ -7,7 +7,7 @@ const sortArray = (arr) => {
                 arr[j] = temp;
             }
         }
-    }
+    }   
 
     return arr;
 };
